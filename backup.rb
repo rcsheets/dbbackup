@@ -36,6 +36,7 @@ exclude = [
   '#mysql50#lost+found',  # horrible non-actual database
   'lost+found',           # see above
   'information_schema',   # we don't ever need to back this up, right?
+  'performance_schema',   # we don't ever need to back this up, right?
 ]
 
 # Get a list of databases other than the ones in the exclude array
