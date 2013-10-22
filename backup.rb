@@ -57,9 +57,13 @@ databases.each do |db|
   if not Dir.exist?(outdir)
     puts "Output directory #{outdir} does not exist..."
     Dir.mkdir(outdir)
+    puts "Created!"
   end
 
-  output = %x{#{mysqldump} -r #{outdir}/#{Time.now.utc.iso8601.tr!('-:','')}.sql #{db}}
+  this_db_time = Time.now.utc.iso8601
+  puts "#{this_db_time} Starting backup of #{db}"
+  output = %x{#{mysqldump} -r #{outdir}/#{this_db_time.tr('-:','')}.sql #{db}}
+  puts "#{Time.now.utc.iso8601} Finished backup of #{db}"
 end
 end_time = Time.now.utc.iso8601
 
