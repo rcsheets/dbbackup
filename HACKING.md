@@ -11,9 +11,11 @@ TBD
 Saucy
 -----
 As root (from a root shell prompt or using sudo):
+
     aptitude install rbenv ruby-build
 
 Then, as a regular user (assuming your shell is bash):
+
     echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
     exec /bin/bash
     rbenv alternatives
